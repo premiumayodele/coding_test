@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <title>Find Trailing Numbers</title>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <h2>Factorial Trailing Numbers</h2>
+    </div>
+    <form class="form-control" method="POST">
+        {% csrf_token %}
+        <div class="card-body">
+            <h4 class="card-title">Enter an integer and seen the trailing zero of its factorial</h4>
+            <div class="form-group row">
+                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Hyphen Number</label>
+                <div class="col-sm-9">
+                    {{ form.trailtext }}<br />
+                    <button type="submit" class="btn btn-success margin-5">Check Trailing</button>
+                </div>
+            </div>
+        </div>
+    </form><br /><br /><br />
+    <div class="container">
+    {% if resp %}
+        <h2>{{ resp }} factorial has {{ result }} trailing zero(s)</h2>
+        </div>
+    {% endif %}
+</body>
+</html> 

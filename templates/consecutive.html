@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <title>Consecutive numbers</title>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <h2>Consecutive Numbers</h2>
+    </div>
+    <form class="form-control" method="POST" action="">
+    {% comment %} <form class="form-control" method="POST" action="{% url: 'resp' %}"> {% endcomment %}
+    {% csrf_token %}
+        <div class="card-body">
+            <h4 class="card-title">Please Enter a hyphenated number you want to check</h4>
+            <div class="form-group row">
+                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Hyphen Number</label>
+                <div class="col-sm-9">
+                    {% comment %} <input type="text" class="form-control" id="hyphnumber" placeholder="For Example: 1-2-3-4-5-6-7-8" required><br /> {% endcomment %}
+                    {{ form.hyphvalue }}<br />
+                    <button type="submit" class="btn btn-success margin-5">Check Number</button>
+                </div>
+            </div>
+        </div>
+    </form><br /><br /><br />
+    <div class="container">
+    {% if resp %}
+        <h2>{{ resp }} returns {{ result|upper }}</h2>
+        </div>
+    {% endif %}
+</body>
+</html> 
